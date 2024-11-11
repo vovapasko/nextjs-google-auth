@@ -12,7 +12,7 @@ export default function Home() {
     try {
       const response = await axios({
         method: "get",
-        url: process.env.NEXT_PUBLIC_BACKEND_URL + "auth/user/",
+        url: process.env.NEXT_PUBLIC_BACKEND_URL + "api/me/",
         headers: useToken ? {Authorization: "Bearer " + session?.access_token} : {},
       });
       setResponse(JSON.stringify(response.data));
